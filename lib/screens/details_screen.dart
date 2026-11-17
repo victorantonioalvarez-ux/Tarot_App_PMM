@@ -11,7 +11,7 @@ class DetailsScreen extends StatelessWidget {
     return Scaffold(
       body: CustomScrollView(
         slivers: [
-          _CustomAppBar(),
+          _CustomAppBar(tarotCard: tarotCard),
           SliverList(
             delegate: SliverChildListDelegate(
               [
@@ -27,6 +27,11 @@ class DetailsScreen extends StatelessWidget {
 }
 
 class _CustomAppBar extends StatelessWidget {
+
+  final TarotCard tarotCard;
+
+  const _CustomAppBar({Key? key, required this.tarotCard}) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
     // Exactament igual que la AppBaer però amb bon comportament davant scroll
@@ -44,13 +49,13 @@ class _CustomAppBar extends StatelessWidget {
           color: Colors.black12,
           padding: const EdgeInsets.only(bottom: 10),
           child: Text(
-            'Títol peli',
+            tarotCard.name,
             style: TextStyle(fontSize: 16),
           ),
         ),
         background: FadeInImage(
           placeholder: AssetImage('assets/loading.gif'),
-          image: NetworkImage('https://placehold.co/500x300/png'),
+          image: NetworkImage(tarotCard.image),
           fit: BoxFit.cover,
         ),
       ),
