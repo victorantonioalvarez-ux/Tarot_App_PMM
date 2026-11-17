@@ -13,7 +13,7 @@ class TarotCard {
     String upright;
     String reversed;
     YesNo yesNo;
-    Element element;
+    TarotElement element;
     Astrology astrology;
     String image;
     String url;
@@ -120,18 +120,13 @@ class Astrology {
     };
 }
 
-enum Element {
-    AIR,
-    EARTH,
-    FIRE,
-    WATER
-}
+enum TarotElement { AIR, EARTH, FIRE, WATER }
 
 final elementValues = EnumValues({
-    "air": Element.AIR,
-    "earth": Element.EARTH,
-    "fire": Element.FIRE,
-    "water": Element.WATER
+    "air": TarotElement.AIR,
+    "earth": TarotElement.EARTH,
+    "fire": TarotElement.FIRE,
+    "water": TarotElement.WATER
 });
 
 enum Suit {
