@@ -12,7 +12,7 @@ class HomeScreen extends StatelessWidget {
 
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Cartellera'),
+        title: const Text('Tarot Cads'),
         elevation: 0,
         actions: [
           IconButton(onPressed: () {}, icon: const Icon(Icons.search_outlined))
@@ -28,12 +28,23 @@ class HomeScreen extends StatelessWidget {
               // Slider de pel·licules
               TarotSlider(
                   tarotCards: tarotProvider.majorArcana,
-                  title: 'Arcanos mayores'),
+                  title: 'Major arcana'),
               // Poodeu fer la prova d'afegir-ne uns quants, veureu com cada llista és independent
               TarotSlider(
                   tarotCards: tarotProvider.minorArcana,
-                  title: 'Arcanos menores'),
-              // MovieSlider(),
+                  title: 'Minor arcana'),
+              TarotSlider(
+                  tarotCards: tarotProvider.cups,
+                  title: 'Cups'),
+              TarotSlider(
+                  tarotCards: tarotProvider.swords,
+                  title: 'Swords'),
+              TarotSlider(
+                  tarotCards: tarotProvider.pentacles,
+                  title: 'Pentacles'),
+              TarotSlider(
+                  tarotCards: tarotProvider.wands,
+                  title: 'Wands'),
             ],
           ),
         ),
