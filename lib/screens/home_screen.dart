@@ -26,9 +26,13 @@ class HomeScreen extends StatelessWidget {
               CardSwiper(tarotCards: tarotProvider.onDisplayTarot),
 
               // Slider de pel·licules
-              MovieSlider(),
+              TarotSlider(
+                  tarotCards: tarotProvider.majorArcana,
+                  title: 'Arcanos mayores'),
               // Poodeu fer la prova d'afegir-ne uns quants, veureu com cada llista és independent
-              // MovieSlider(),
+              TarotSlider(
+                  tarotCards: tarotProvider.minorArcana,
+                  title: 'Arcanos menores'),
               // MovieSlider(),
             ],
           ),
