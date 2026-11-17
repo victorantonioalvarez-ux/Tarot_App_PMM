@@ -8,6 +8,12 @@ class TarotProvider extends ChangeNotifier {
 
   List<TarotCard> onDisplayTarot = [];
 
+  List<TarotCard> get majorArcana =>
+      onDisplayTarot.where((c) => c.arcana == Arcana.MAJOR).toList();
+
+  List<TarotCard> get minorArcana =>
+      onDisplayTarot.where((c) => c.arcana == Arcana.MINOR).toList();
+
   TarotProvider() {
     print('Tarot Provider Inicializado');
     this.getOnDisplayTarot();
