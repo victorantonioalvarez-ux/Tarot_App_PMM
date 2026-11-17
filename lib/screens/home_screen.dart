@@ -8,7 +8,7 @@ class HomeScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     final tarotProvider = Provider.of<TarotProvider>(context);
 
-    print(tarotProvider.onDisplayTarot);
+    //print(tarotProvider.onDisplayTarot);
 
     return Scaffold(
       appBar: AppBar(
@@ -23,7 +23,7 @@ class HomeScreen extends StatelessWidget {
           child: Column(
             children: [
               // Targetes principals
-              CardSwiper(),
+              CardSwiper(tarotCards: tarotProvider.onDisplayTarot),
 
               // Slider de pel·licules
               MovieSlider(),
