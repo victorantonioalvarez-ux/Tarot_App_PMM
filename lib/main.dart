@@ -11,8 +11,9 @@ class AppState extends StatelessWidget {
   Widget build(BuildContext context) {
     return MultiProvider(
       providers: [
-        ChangeNotifierProvider(create: ( _ ) => TarotProvider())
-      ]
+        ChangeNotifierProvider(create: ( _ ) => TarotProvider(), lazy: false)
+      ],
+      child: MyApp(),
     );
   }
 }
