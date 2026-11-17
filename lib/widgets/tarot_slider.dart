@@ -61,7 +61,7 @@ class _TarotPoster extends StatelessWidget {
               borderRadius: BorderRadius.circular(20),
               child: FadeInImage(
                 placeholder: AssetImage('assets/no-image.jpg'),
-                image: NetworkImage(tarotCard.image),
+                image: NetworkImage(tarotCard.image ?? 'https://placehold.co/300x400/png'),
                 width: 130,
                 height: 190,
                 fit: BoxFit.cover,

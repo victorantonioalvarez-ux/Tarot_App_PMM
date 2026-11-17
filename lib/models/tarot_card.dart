@@ -15,7 +15,7 @@ class TarotCard {
     YesNo yesNo;
     TarotElement element;
     Astrology astrology;
-    String image;
+    String? image;
     String url;
 
     TarotCard({
@@ -31,7 +31,7 @@ class TarotCard {
         required this.yesNo,
         required this.element,
         required this.astrology,
-        required this.image,
+        this.image,
         required this.url,
     });
 
