@@ -8,7 +8,7 @@ class TarotSlider extends StatelessWidget {
   const TarotSlider({
     super.key,
     required this.tarotCards,
-    this.title = 'Populars',
+    this.title = '',
   });
 
   @override
