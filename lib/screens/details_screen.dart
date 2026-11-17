@@ -15,7 +15,7 @@ class DetailsScreen extends StatelessWidget {
           SliverList(
             delegate: SliverChildListDelegate(
               [
-                _PosterAndTitile(),
+                _CardAndTitle(tarotCard: tarotCard),
                 _Overview(),
               ],
             ),
@@ -55,7 +55,7 @@ class _CustomAppBar extends StatelessWidget {
         ),
         background: FadeInImage(
           placeholder: AssetImage('assets/loading.gif'),
-          image: NetworkImage(tarotCard.image),
+          image: NetworkImage(tarotCard.image ?? 'https://placehold.co/500x300/png'),
           fit: BoxFit.cover,
         ),
       ),
@@ -63,7 +63,12 @@ class _CustomAppBar extends StatelessWidget {
   }
 }
 
-class _PosterAndTitile extends StatelessWidget {
+class _CardAndTitle extends StatelessWidget {
+
+  final TarotCard tarotCard;
+
+  const _CardAndTitle({Key? key, required this.tarotCard}) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
     final TextTheme textTheme = Theme.of(context).textTheme;
@@ -76,7 +81,7 @@ class _PosterAndTitile extends StatelessWidget {
             borderRadius: BorderRadius.circular(20),
             child: FadeInImage(
               placeholder: AssetImage('assets/loading.gif'),
-              image: NetworkImage('https://placehold.co/200x300/png'),
+              image: NetworkImage(tarotCard.image ?? 'https://placehold.co/200x300/png'),
               height: 150,
             ),
           ),
@@ -86,22 +91,21 @@ class _PosterAndTitile extends StatelessWidget {
           Column(
             children: [
               Text(
-                'Títol peli',
+                tarotCard.name,
                 style: textTheme.headlineSmall,
                 overflow: TextOverflow.ellipsis,
                 maxLines: 2,
               ),
               Text(
-                'Títol original',
+                tarotCard.arcana.name,
                 style: textTheme.titleMedium,
                 overflow: TextOverflow.ellipsis,
                 maxLines: 2,
               ),
               Row(
                 children: [
-                  const Icon(Icons.star_outline, size: 15, color: Colors.grey),
                   const SizedBox(width: 5),
-                  Text('Nota mitjana', style: textTheme.bodySmall),
+                  Text(tarotCard.element.name, style: textTheme.bodySmall),
                 ],
               )
             ],
