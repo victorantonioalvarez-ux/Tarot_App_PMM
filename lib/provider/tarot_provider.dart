@@ -25,5 +25,7 @@ class TarotProvider extends ChangeNotifier {
     final tarotResponse = TarotResponse.fromJson(result.body);
 
     onDisplayTarot = tarotResponse.cards;
+
+    notifyListeners();
   }
 }

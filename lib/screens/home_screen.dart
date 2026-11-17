@@ -1,9 +1,15 @@
 import 'package:flutter/material.dart';
 import 'package:movies_app/widgets/widgets.dart';
+import 'package:provider/provider.dart';
+import 'package:movies_app/provider/tarot_provider.dart';
 
 class HomeScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
+    final tarotProvider = Provider.of<TarotProvider>(context);
+
+    print(tarotProvider.onDisplayTarot);
+
     return Scaffold(
       appBar: AppBar(
         title: const Text('Cartellera'),
