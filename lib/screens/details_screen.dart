@@ -49,7 +49,7 @@ class _CustomAppBar extends StatelessWidget {
           padding: const EdgeInsets.only(bottom: 10),
           child: Text(
             tarotCard.name,
-            style: TextStyle(fontSize: 16),
+            style: TextStyle(fontSize: 16,color: Colors.white),
           ),
         ),
         background: FadeInImage(
@@ -88,11 +88,13 @@ class _CardAndTitle extends StatelessWidget {
           const SizedBox(
             width: 20,
           ),
-          Column(
+          Expanded(
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               Text(
                 tarotCard.name,
-                style: textTheme.headlineSmall,
+                style: textTheme.headlineMedium,
                 overflow: TextOverflow.ellipsis,
                 maxLines: 2,
               ),
@@ -109,7 +111,7 @@ class _CardAndTitle extends StatelessWidget {
                 ],
               )
             ],
-          )
+          ))
         ],
       ),
     );
