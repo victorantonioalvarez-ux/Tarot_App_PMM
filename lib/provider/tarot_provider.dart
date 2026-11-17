@@ -1,4 +1,4 @@
-import 'package:flutter/material.dart';
+import 'package:flutter/material.dart' show ChangeNotifier;
 
 import 'dart:convert' as convert;
 import 'package:http/http.dart' as http;
@@ -21,10 +21,9 @@ class TarotProvider extends ChangeNotifier {
 
     // Await the http get response, then decode the json-formatted response.
     final result = await http.get(url);
-    
+
     final tarotResponse = TarotResponse.fromJson(result.body);
-    
+
     onDisplayTarot = tarotResponse.cards;
-    }
   }
 }
