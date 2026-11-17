@@ -16,7 +16,7 @@ class DetailsScreen extends StatelessWidget {
             delegate: SliverChildListDelegate(
               [
                 _CardAndTitle(tarotCard: tarotCard),
-                _Overview(),
+                _Overview(tarotCard: tarotCard),
               ],
             ),
           ),
@@ -27,7 +27,6 @@ class DetailsScreen extends StatelessWidget {
 }
 
 class _CustomAppBar extends StatelessWidget {
-
   final TarotCard tarotCard;
 
   const _CustomAppBar({Key? key, required this.tarotCard}) : super(key: key);
@@ -55,7 +54,8 @@ class _CustomAppBar extends StatelessWidget {
         ),
         background: FadeInImage(
           placeholder: AssetImage('assets/loading.gif'),
-          image: NetworkImage(tarotCard.image ?? 'https://placehold.co/500x300/png'),
+          image: NetworkImage(
+              tarotCard.image ?? 'https://placehold.co/500x300/png'),
           fit: BoxFit.cover,
         ),
       ),
@@ -64,7 +64,6 @@ class _CustomAppBar extends StatelessWidget {
 }
 
 class _CardAndTitle extends StatelessWidget {
-
   final TarotCard tarotCard;
 
   const _CardAndTitle({Key? key, required this.tarotCard}) : super(key: key);
@@ -81,7 +80,8 @@ class _CardAndTitle extends StatelessWidget {
             borderRadius: BorderRadius.circular(20),
             child: FadeInImage(
               placeholder: AssetImage('assets/loading.gif'),
-              image: NetworkImage(tarotCard.image ?? 'https://placehold.co/200x300/png'),
+              image: NetworkImage(
+                  tarotCard.image ?? 'https://placehold.co/200x300/png'),
               height: 150,
             ),
           ),
@@ -117,15 +117,31 @@ class _CardAndTitle extends StatelessWidget {
 }
 
 class _Overview extends StatelessWidget {
+  final TarotCard tarotCard;
+
+  const _Overview({Key? key, required this.tarotCard}) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
     return Container(
-      padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 10),
-      child: Text(
-        'Labore eiusmod ad reprehenderit irure eu sunt ex minim. Lorem fugiat Lorem proident duis ea cupidatat. Commodo duis culpa reprehenderit ad elit. Velit duis officia reprehenderit ullamco sint id anim officia est. Enim mollit nisi et exercitation dolore commodo. Cillum mollit laborum non nulla cillum non do reprehenderit Lorem deserunt ex eu sunt do.',
-        textAlign: TextAlign.justify,
-        style: Theme.of(context).textTheme.titleMedium,
-      ),
-    );
+        padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 10),
+        child: Column(
+          children: [
+            Title(color: Colors.black, child: Text('Upright')),
+            Text(
+              tarotCard.upright,
+              textAlign: TextAlign.justify,
+              style: Theme.of(context).textTheme.titleMedium,
+            ),
+            SizedBox(height: 15,),
+            Title(color: Colors.black, child: Text('Reversed')),
+            Text(
+              tarotCard.reversed,
+              textAlign: TextAlign.justify,
+              style: Theme.of(context).textTheme.titleMedium,
+            ),
+            SizedBox(height: 15,),
+          ],
+        ));
   }
 }
