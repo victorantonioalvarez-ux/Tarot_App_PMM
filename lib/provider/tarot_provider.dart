@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 
 class TarotProvider extends ChangeNotifier {
   TarotProvider(){
-    print('Movies Provider Inicializado');
+    print('Tarot Provider Inicializado');
     this.getOnDisplayTarot();
   }
 

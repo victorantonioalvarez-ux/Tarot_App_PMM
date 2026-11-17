@@ -3,7 +3,7 @@ import 'package:movies_app/provider/tarot_provider.dart';
 import 'package:movies_app/screens/screens.dart';
 import 'package:provider/provider.dart';
 
-void main() => runApp(MyApp());
+void main() => runApp(AppState());
 
 class AppState extends StatelessWidget {
 
