@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:movies_app/provider/tarot_provider.dart';
-import 'package:movies_app/screens/screens.dart';
+import 'package:Tarot_app/provider/tarot_provider.dart';
+import 'package:Tarot_app/screens/screens.dart';
 import 'package:provider/provider.dart';
 
 void main() => runApp(AppState());
@@ -23,7 +23,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      title: 'Pel·lícules',
+      title: 'Tarot Cards',
       initialRoute: '/',
       routes: {
         '/': (BuildContext context) => HomeScreen(),

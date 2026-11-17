@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:movies_app/models/models.dart';
+import 'package:Tarot_app/models/models.dart';
 
 class DetailsScreen extends StatelessWidget {
   @override

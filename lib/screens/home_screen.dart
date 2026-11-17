@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:movies_app/widgets/widgets.dart';
+import 'package:Tarot_app/widgets/widgets.dart';
 import 'package:provider/provider.dart';
-import 'package:movies_app/provider/tarot_provider.dart';
+import 'package:Tarot_app/provider/tarot_provider.dart';
 
 class HomeScreen extends StatelessWidget {
   @override

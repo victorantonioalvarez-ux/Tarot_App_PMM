@@ -3,5 +3,5 @@
   creant dintre del directori screen.
   Després simplemenrt haurem de fer UN SOL import d'aquest fitxer.
 */
-export 'package:movies_app/widgets/card_swiper.dart';
-export 'package:movies_app/widgets/tarot_slider.dart';
+export 'package:Tarot_app/widgets/card_swiper.dart';
+export 'package:Tarot_app/widgets/tarot_slider.dart';

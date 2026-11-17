@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 import 'package:http/http.dart' as http;
-import 'package:movies_app/models/models.dart';
+import 'package:Tarot_app/models/models.dart';
 
 class TarotProvider extends ChangeNotifier {
   String _baseUrl = 'tarostarot.com';
