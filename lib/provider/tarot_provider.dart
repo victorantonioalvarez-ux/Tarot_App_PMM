@@ -2,10 +2,12 @@ import 'package:flutter/material.dart';
 
 import 'dart:convert' as convert;
 import 'package:http/http.dart' as http;
+import 'package:movies_app/models/tarot_response.dart';
 
 class TarotProvider extends ChangeNotifier {
+  String _baseUrl = 'tarostarot.com';
 
-String _baseUrl = 'tarostarot.com';
+  List<Card> onDisplayTarot = [];
 
   TarotProvider() {
     print('Tarot Provider Inicializado');
@@ -15,18 +17,14 @@ String _baseUrl = 'tarostarot.com';
   getOnDisplayTarot() async {
     print('getOnDisplayTarot');
 
-    var url =
-        Uri.https(_baseUrl, '/tarot-card-data/tarot-cards.json');
+    var url = Uri.https(_baseUrl, '/tarot-card-data/tarot-cards.json');
 
     // Await the http get response, then decode the json-formatted response.
-    var response = await http.get(url);
-    if (response.statusCode == 200) {
-      var jsonResponse =
-          convert.jsonDecode(response.body) as Map<String, dynamic>;
-      var itemCount = jsonResponse['cards'];
-      print('Number of books about http: $itemCount.');
-    } else {
-      print('Request failed with status: ${response.statusCode}.');
+    final result = await http.get(url);
+    
+    final tarotResponse = TarotResponse.fromJson(result.body);
+    
+    onDisplayTarot = tarotResponse.cards;
     }
   }
 }
