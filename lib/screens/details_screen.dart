@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
-import 'package:movies_app/widgets/widgets.dart';
+import 'package:movies_app/models/models.dart';
 
 class DetailsScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     // TODO: Canviar després per una instància de Peli
-    final String peli =
-        ModalRoute.of(context)?.settings.arguments.toString() ?? 'no-movie';
+    final TarotCard tarotCard =
+        ModalRoute.of(context)?.settings.arguments as TarotCard;
 
     return Scaffold(
       body: CustomScrollView(
@@ -17,7 +17,6 @@ class DetailsScreen extends StatelessWidget {
               [
                 _PosterAndTitile(),
                 _Overview(),
-
               ],
             ),
           ),
