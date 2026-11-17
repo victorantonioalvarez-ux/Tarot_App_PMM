@@ -1,13 +1,12 @@
-import 'package:flutter/material.dart' show ChangeNotifier;
+import 'package:flutter/material.dart';
 
-import 'dart:convert' as convert;
 import 'package:http/http.dart' as http;
-import 'package:movies_app/models/tarot_response.dart';
+import 'package:movies_app/models/models.dart';
 
 class TarotProvider extends ChangeNotifier {
   String _baseUrl = 'tarostarot.com';
 
-  List<Card> onDisplayTarot = [];
+  List<TarotCard> onDisplayTarot = [];
 
   TarotProvider() {
     print('Tarot Provider Inicializado');

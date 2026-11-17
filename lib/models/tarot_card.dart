@@ -1,6 +1,8 @@
+
+
 import 'models.dart';
 
-class Card {
+class TarotCard {
     String id;
     String name;
     int number;
@@ -16,7 +18,7 @@ class Card {
     String image;
     String url;
 
-    Card({
+    TarotCard({
         required this.id,
         required this.name,
         required this.number,
@@ -33,11 +35,11 @@ class Card {
         required this.url,
     });
 
-    factory Card.fromJson(String str) => Card.fromMap(json.decode(str));
+    factory TarotCard.fromJson(String str) => TarotCard.fromMap(json.decode(str));
 
     String toJson() => json.encode(toMap());
 
-    factory Card.fromMap(Map<String, dynamic> json) => Card(
+    factory TarotCard.fromMap(Map<String, dynamic> json) => TarotCard(
         id: json["id"],
         name: json["name"],
         number: json["number"],
@@ -157,9 +159,6 @@ class YesNo {
         required this.summary,
     });
 
-    factory YesNo.fromJson(String str) => YesNo.fromMap(json.decode(str));
-
-    String toJson() => json.encode(toMap());
 
     factory YesNo.fromMap(Map<String, dynamic> json) => YesNo(
         upright: reversedValues.map[json["upright"]]!,
